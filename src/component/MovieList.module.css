@@ -1,0 +1,17 @@
+.list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  white-space: nowrap;
+  overflow-x: scroll;
+  margin: 2rem;
+  scrollbar-color: red yellow;
+}
+
+.listItem {
+  flex-shrink: 0;
+  width: 12rem;
+  height: calc(12rem * 1.5);
+  background-size: cover;
+  background-position: center;
+}
