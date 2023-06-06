@@ -1,8 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import originalsMvSlice from "./originalsMv";
+import movieSlice from "./movies";
 import errorSlice from "./error";
+import detailSlice from "./description";
 
 const store = configureStore({
-  reducer: { oriMV: originalsMvSlice.reducer, error: errorSlice.reducer },
+  reducer: {
+    movie: movieSlice.reducer,
+    error: errorSlice.reducer,
+    detail: detailSlice.reducer,
+  },
 });
 export default store;

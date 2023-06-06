@@ -1,0 +1,15 @@
+.listItem {
+  flex-shrink: 0;
+  width: 12rem;
+  height: 20rem;
+  background-size: cover;
+  background-position: center;
+  transition: scale ease-in-out 0.2s;
+}
+.listItem.backdrop {
+  width: 15rem;
+  height: 12rem;
+}
+.listItem:hover {
+  scale: 1.1;
+}

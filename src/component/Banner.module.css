@@ -6,6 +6,8 @@
   background-position: 50% 30%;
   box-shadow: 0 0 0 50vw rgba(0, 0, 0, 0.1) inset;
   padding: 0 0 3rem 3rem;
+  margin-bottom: 2rem;
+  transition: background-image ease-in-out 0.5s;
 }
 .descript {
   height: 100%;

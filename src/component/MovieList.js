@@ -1,17 +1,11 @@
 import classes from "./MovieList.module.css";
+import MovieItem from "./MovieItem";
 
-function MovieList({ oriMV }) {
+function MovieList({ movie, poster, genre }) {
   return (
     <div className={classes.list}>
-      {oriMV.map((el) => (
-        <a
-          href="#"
-          className={classes.listItem}
-          key={el.id}
-          style={{
-            backgroundImage: `url(https://image.tmdb.org/t/p/original${el.poster_path})`,
-          }}
-        ></a>
+      {movie.map((el) => (
+        <MovieItem key={el.id} movie={el} poster={poster} genre={genre} />
       ))}
     </div>
   );

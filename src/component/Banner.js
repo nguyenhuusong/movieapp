@@ -1,11 +1,30 @@
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import classes from "./Banner.module.css";
 import { useSelector } from "react-redux";
 
 function Banner() {
-  const oriMV = useSelector((state) => state.oriMV.movie);
-  const isSuccessLoad = useSelector((state) => state.oriMV.isSuccessLoad);
-  const randomNum = Math.floor(Math.random() * oriMV.length);
+  const oriMV = useSelector((state) => state.movie.netFlixOriginals.movie);
+
+  const [randomNum, setRandomNum] = useState(1);
+  useEffect(() => {
+    setTimeout(() => {
+      let random1 = Math.floor(Math.random() * oriMV.length);
+      if (random1 === randomNum) {
+        if (random1 >= oriMV.length - 3) {
+          random1 -= 3;
+        } else {
+          random1 += 1;
+        }
+      }
+
+      setRandomNum(random1);
+    }, 5000);
+  }, [randomNum]);
+
+  const isSuccessLoad = useSelector(
+    (state) => state.movie.netFlixOriginals.Loaded
+  );
+
   return (
     <Fragment>
       {isSuccessLoad && (

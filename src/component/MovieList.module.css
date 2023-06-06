@@ -4,14 +4,19 @@
   gap: 1rem;
   white-space: nowrap;
   overflow-x: scroll;
-  margin: 2rem;
-  scrollbar-color: red yellow;
+  overflow-y: visible;
+  margin: 0 2rem 5rem 2rem;
+  padding: 1.25rem 0;
 }
 
-.listItem {
-  flex-shrink: 0;
-  width: 12rem;
-  height: calc(12rem * 1.5);
-  background-size: cover;
-  background-position: center;
+.list::-webkit-scrollbar {
+  height: 5px;
+  width: 1rem;
+}
+.list::-webkit-scrollbar-track {
+  background: #212529;
+}
+.list::-webkit-scrollbar-thumb {
+  background: #495057;
+  border-radius: 2.5px;
 }

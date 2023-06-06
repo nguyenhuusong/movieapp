@@ -4,7 +4,16 @@ import Browse from "./pages/browse/Browse";
 import Search from "./pages/search/Search";
 import Root from "./pages/Root";
 import { useDispatch } from "react-redux";
-import { fetchOriMV } from "./store/originalsMv";
+import {
+  fetchTreMovie,
+  fetchNetflixMovie,
+  fetchTopRatedMovie,
+  fetchActionMovie,
+  fetchComdyMovie,
+  fetchHorrorMovie,
+  fetchRomanceMovie,
+  fetchDocumentariesMovie,
+} from "./store/movies";
 
 const router = createBrowserRouter([
   {
@@ -16,13 +25,19 @@ const router = createBrowserRouter([
     ],
   },
 ]);
-let initial = true;
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchOriMV());
+    dispatch(fetchTreMovie());
+    dispatch(fetchNetflixMovie());
+    dispatch(fetchTopRatedMovie());
+    dispatch(fetchActionMovie());
+    dispatch(fetchComdyMovie());
+    dispatch(fetchHorrorMovie());
+    dispatch(fetchRomanceMovie());
+    dispatch(fetchDocumentariesMovie());
   }, [dispatch]);
   return <RouterProvider router={router} />;
 }
