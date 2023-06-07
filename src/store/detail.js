@@ -5,7 +5,7 @@ const detailSlice = createSlice({
   initialState: {
     trending: false,
     netFlixOriginals: false,
-    topRated: false,
+    topRated: true,
     action: false,
     comedy: false,
     horror: false,

@@ -1,4 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { DetailMovieAction } from "./detailMovie";
+import { useDispatch } from "react-redux";
+
 const API_KEY = "04319bae7ae40f1d7098f3b5a19be0d2";
 export const requests = {
   fetchTrending: `/trending/all/week?api_key=${API_KEY}&language=en-US`,
@@ -86,7 +89,6 @@ export const fetchTreMovie = () => {
       );
       if (!response.ok) throw new Error();
       const data = await response.json();
-      console.log(data);
 
       dispatch(movieAction.replaceTrending(data));
       dispatch(movieAction.LoadedTrending(true));
@@ -119,6 +121,7 @@ export const fetchTopRatedMovie = () => {
       );
       if (!response.ok) throw new Error();
       const data = await response.json();
+      // dispatch(DetailMovieAction.replaceMovie(data.results[0]));
       dispatch(movieAction.replaceTopRated(data));
       dispatch(movieAction.LoadedTopRated(true));
     } catch (err) {

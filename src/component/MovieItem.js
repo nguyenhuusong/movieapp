@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import classes from "./MovieItem.module.css";
-import { useDispatch } from "react-redux";
-import { DetailAction } from "../store/description";
+import { useDispatch, useSelector } from "react-redux";
+import { DetailAction } from "../store/detail";
+import { DetailMovieAction } from "../store/detailMovie";
 
 function MovieItem({ movie, poster, genre }) {
   const dispatch = useDispatch();
+  const detailMovie = useSelector((state) => state.detailMovie.movie);
 
   function onClickHandler() {
     switch (genre) {
@@ -32,6 +34,13 @@ function MovieItem({ movie, poster, genre }) {
       case "documentaries":
         dispatch(DetailAction.DetailDocumentaries());
         break;
+    }
+    if (detailMovie?.id === movie.id) {
+      console.log("aa");
+      dispatch(DetailAction.DetailOff());
+      dispatch(DetailMovieAction.replaceMovie(null));
+    } else {
+      dispatch(DetailMovieAction.replaceMovie(movie));
     }
   }
 

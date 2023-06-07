@@ -16,7 +16,6 @@ import Detail from "../../component/Detail";
 function Browse() {
   const dispatch = useDispatch();
   const isError = useSelector((state) => state.error.isError);
-  const detail = useSelector((state) => state.detail);
 
   return (
     <Fragment>
@@ -25,28 +24,20 @@ function Browse() {
         <>
           <Banner />
           <OriginalsMV />
-          {detail.netFlixOriginals && <Detail />}
           <h2 className={classes.title}>Xu hướng</h2>
           <Trending />
-          {detail.trending && <Detail />}
           <h2 className={classes.title}>Xếp hạng cao</h2>
           <TopRated />
-          {detail.topRated && <Detail />}
           <h2 className={classes.title}>Hành động</h2>
           <Action />
-          {detail.action && <Detail />}
           <h2 className={classes.title}>Hài</h2>
           <Comdy />
-          {detail.comedy && <Detail />}
           <h2 className={classes.title}>Kinh dị</h2>
           <Horor />
-          {detail.horror && <Detail />}
           <h2 className={classes.title}>Lãng mạn</h2>
           <Romance />
-          {detail.romance && <Detail />}
           <h2 className={classes.title}>Tài liệu</h2>
           <Documentaries />
-          {detail.documentaries && <Detail />}
         </>
       )}
     </Fragment>

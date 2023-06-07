@@ -1,3 +1,6 @@
+.container {
+  margin-bottom: 5rem;
+}
 .list {
   list-style: none;
   display: flex;
@@ -5,7 +8,7 @@
   white-space: nowrap;
   overflow-x: scroll;
   overflow-y: visible;
-  margin: 0 2rem 5rem 2rem;
+  margin: 0 2rem 0rem 2rem;
   padding: 1.25rem 0;
 }
 
