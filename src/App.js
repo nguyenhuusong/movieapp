@@ -21,7 +21,7 @@ import {
 const router = createBrowserRouter(
   [
     {
-      path: "/movieapp",
+      path: "/",
       element: <Root />,
       errorElement: <Error />,
       children: [
