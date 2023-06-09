@@ -4,6 +4,9 @@ import Browse from "./pages/browse/Browse";
 import Search from "./pages/search/Search";
 import Root from "./pages/Root";
 import { useDispatch } from "react-redux";
+import { action as searchAction } from "./component/search/Form";
+import Error from "./component/Error";
+
 import {
   fetchTreMovie,
   fetchNetflixMovie,
@@ -19,9 +22,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <Error />,
     children: [
       { index: true, element: <Browse /> },
-      { path: "/search", element: <Search /> },
+      { path: "/search", element: <Search />, action: searchAction },
     ],
   },
 ]);

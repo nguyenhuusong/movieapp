@@ -3,6 +3,7 @@ import movieSlice from "./movies";
 import errorSlice from "./error";
 import detailSlice from "./detail";
 import detailMovieSlice from "./detailMovie";
+import searchSlice from "./search";
 
 const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
     error: errorSlice.reducer,
     detail: detailSlice.reducer,
     detailMovie: detailMovieSlice.reducer,
+    search: searchSlice.reducer,
   },
 });
 export default store;

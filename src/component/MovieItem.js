@@ -36,7 +36,6 @@ function MovieItem({ movie, poster, genre }) {
         break;
     }
     if (detailMovie?.id === movie.id) {
-      console.log("aa");
       dispatch(DetailAction.DetailOff());
       dispatch(DetailMovieAction.replaceMovie(null));
     } else {

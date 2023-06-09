@@ -1,0 +1,58 @@
+.container {
+  margin-top: 7rem;
+}
+.container form {
+  width: 45vw;
+  margin: 0 auto;
+  background-color: white;
+}
+.container input {
+  font-size: 1rem;
+  border: 0;
+  flex-grow: 1;
+}
+
+.action {
+  display: flex;
+  justify-content: space-between;
+}
+.action.floatRight {
+  justify-content: flex-end;
+}
+.container input:focus {
+  outline: 0;
+}
+.container label {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #3bc9db;
+  align-items: center;
+}
+.container i {
+  color: #ced4da;
+}
+.action {
+  padding: 2.5rem 2rem;
+}
+.alert {
+  color: red;
+}
+.action button {
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  margin-left: 1rem;
+  background-color: white;
+}
+.action .searchBtn {
+  color: white;
+  background-color: #3bc9db;
+}
+.action .searchBtn:hover {
+  background-color: #22b8cf;
+  cursor: pointer;
+}
+.action .resetBtn:hover {
+  background-color: #e9ecef;
+  cursor: pointer;
+}
