@@ -18,17 +18,20 @@ import {
   fetchDocumentariesMovie,
 } from "./store/movies";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Root />,
-    errorElement: <Error />,
-    children: [
-      { index: true, element: <Browse /> },
-      { path: "/search", element: <Search />, action: searchAction },
-    ],
-  },
-]);
+const router = createBrowserRouter(
+  [
+    {
+      path: "/movieapp",
+      element: <Root />,
+      errorElement: <Error />,
+      children: [
+        { index: true, element: <Browse /> },
+        { path: "/search", element: <Search />, action: searchAction },
+      ],
+    },
+  ],
+  { basename: "/movieapp" }
+);
 
 function App() {
   const dispatch = useDispatch();
